@@ -19,7 +19,7 @@ export default function IndexPage() {
           </Group>
         <Group>
           {entryEnList.map(a=>(
-            <Button size='xs' variant='outline' color="gray" key={a.entry} onClick={()=>setEntry(a.entry)}>{a.entry}口（{a.en}）</Button>
+            <Button size='compact-xs' variant='outline' color="gray" key={a.entry} onClick={()=>setEntry(a.entry)}>{a.entry}口（{a.en}）</Button>
           ))}
         </Group>
         {result && 

@@ -7,27 +7,27 @@ export default function IndexPage() {
   const [result, setResult] = useState<number | undefined>()
   return (
     <Container fluid>
-    <Stack align="center" justify="center">
-      <Title>第1476回 MEGA BIG シミュレーター</Title>
-      <Group align="end">
-      <NumberInput 
-        label='購入数を入力（1口300円）' 
-        w={200}
-        value={entry}
-        onChange={setEntry} />
-        <Button color='gray' onClick={()=>setResult(calc(entry as number))}>回す</Button>
-      </Group>
-      <Group>
-        {entryEnList.map(a=>(
-          <Button size='xs' variant='outline' color="gray" key={a.entry} onClick={()=>setEntry(a.entry)}>{a.entry}口（{a.en}）</Button>
-        ))}
-      </Group>
-      {result && 
-      <Text size='xl' fw='bold'>
-        {result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` :  `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！` }
-      </Text>
-      }
-    </Stack>
+      <Stack align="center" justify="center">
+        <Title>第1476回 MEGA BIG シミュレーター</Title>
+        <Group align="end"> 
+          <NumberInput 
+            label='購入数を入力（1口300円）' 
+            w={200}
+            value={entry}
+            onChange={setEntry} />
+            <Button color='gray' onClick={()=>setResult(calc(entry as number))}>回す</Button>
+          </Group>
+        <Group>
+          {entryEnList.map(a=>(
+            <Button size='xs' variant='outline' color="gray" key={a.entry} onClick={()=>setEntry(a.entry)}>{a.entry}口（{a.en}）</Button>
+          ))}
+        </Group>
+        {result && 
+        <Text size='xl' fw='bold'>
+          {result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` :  `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！` }
+        </Text>
+        }
+      </Stack>
     </Container>
   );
 }

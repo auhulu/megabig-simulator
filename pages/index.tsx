@@ -4,7 +4,7 @@ import { calc } from "../libs/calc";
 
 export default function IndexPage() {
   const [entry, setEntry] = useState(1000)
-  const [result, setResult] = useState()
+  const [result, setResult] = useState<number | undefined>()
   return (
     <Container fluid>
     <Stack align="center" justify="center">
@@ -19,7 +19,7 @@ export default function IndexPage() {
       </Group>
       <Group>
         {entryEnList.map(a=>(
-          <Button size='xs' variant='outline' color="gray" key={a[0]} onClick={()=>setEntry(a[0])}>{a[0]}口（{a[1]}）</Button>
+          <Button size='xs' variant='outline' color="gray" key={a.entry} onClick={()=>setEntry(a.entry)}>{a.entry}口（{a.en}）</Button>
         ))}
       </Group>
       {result && 
@@ -33,11 +33,11 @@ export default function IndexPage() {
 }
 
 const entryEnList = [
-  [1,"300円"],
-  [10,"3000円"],
-  [100,"3万円"],
-  [1000,"30万円"],
-  [10000,"300万円"],
-  [100000,"3000万円"],
-  [1000000,"3億円"],
+  {entry: 1, en:"300円"},
+  {entry: 10, en:"3000円"},
+  {entry: 100, en:"3万円"},
+  {entry: 1000, en:"30万円"},
+  {entry: 10000, en:"300万円"},
+  {entry: 100000, en:"3000万円"},
+  {entry: 1000000, en:"3億円"},
 ]

@@ -5,8 +5,8 @@ import { calc } from "../libs/calc";
 export default function IndexPage() {
   const [entry, setEntry] = useState<string | number>(1000)
   const [result, setResult] = useState<number | undefined>()
-  const message = !result ? "" :  result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` : `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！`
-  const post =  !result ? "" :  result >= 0 ? ` おめでとう！${entry}口購入して${Math.abs(result).toLocaleString()}円得しました！！` : `ざんねん！${entry}口購入して${Math.abs(result).toLocaleString()}円損しました！！`
+  const message = !result ? "" :  result >= 0 ? ` おめでとう！${Math.abs(result)}円得しました！！` : `ざんねん！${Math.abs(result)}円損しました！！`
+  const post =  !result ? "" :  result >= 0 ? ` おめでとう！${entry}口購入して${Math.abs(result)}円得しました！！` : `ざんねん！${entry}口購入して${Math.abs(result)}円損しました！！`
   return (
     <Container fluid>
       <Stack align="center" justify="center">

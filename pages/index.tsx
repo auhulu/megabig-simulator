@@ -5,7 +5,8 @@ import { calc } from "../libs/calc";
 export default function IndexPage() {
   const [entry, setEntry] = useState<string | number>(1000)
   const [result, setResult] = useState<number | undefined>()
-  const message = !result ? "" :  result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` : `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！` 
+  const message = !result ? "" :  result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` : `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！`
+  const post =  !result ? "" :  result >= 0 ? ` おめでとう！${entry}口購入して${Math.abs(result).toLocaleString()}円得しました！！` : `ざんねん！${entry}口購入して${Math.abs(result).toLocaleString()}円損しました！！`
   return (
     <Container fluid>
       <Stack align="center" justify="center">
@@ -32,7 +33,7 @@ export default function IndexPage() {
         <Button
           color='black'
           component='a'
-          href={`https://twitter.com/intent/tweet?&url=https://megabig.nwnwn.com&hashtags=MEGABIGシミュレーター&text=${message}`}
+          href={`https://twitter.com/intent/tweet?&url=https://megabig.nwnwn.com&hashtags=MEGABIGシミュレーター&text=${post}`}
         >
           𝕏に結果を投稿
         </Button>

@@ -8,7 +8,7 @@ export default function IndexPage() {
   return (
     <Container fluid>
       <Stack align="center" justify="center">
-        <Title>第1476回 MEGA BIG シミュレーター</Title>
+        <Title order={1} size='h4'>第1476回 MEGA BIG シミュレーター</Title>
         <Group align="end"> 
           <NumberInput 
             label='購入数を入力（1口300円）' 
@@ -23,7 +23,7 @@ export default function IndexPage() {
           ))}
         </Group>
         {result && 
-        <Text size='xl' fw='bold'>
+        <Text size='lg' fw='bold'>
           {result >= 0 ? ` おめでとう！${Math.abs(result).toLocaleString()}円得しました！！` :  `ざんねん！${Math.abs(result).toLocaleString()}円損しました！！` }
         </Text>
         }

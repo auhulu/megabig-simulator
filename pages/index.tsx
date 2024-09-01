@@ -3,7 +3,7 @@ import { useState } from "react";
 import { calc } from "../libs/calc";
 
 export default function IndexPage() {
-  const [entry, setEntry] = useState(1000)
+  const [entry, setEntry] = useState<string | number>(1000)
   const [result, setResult] = useState<number | undefined>()
   return (
     <Container fluid>
@@ -15,7 +15,7 @@ export default function IndexPage() {
         w={200}
         value={entry}
         onChange={setEntry} />
-        <Button color='gray' onClick={()=>setResult(calc(entry))}>回す</Button>
+        <Button color='gray' onClick={()=>setResult(calc(entry as number))}>回す</Button>
       </Group>
       <Group>
         {entryEnList.map(a=>(

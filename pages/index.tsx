@@ -15,6 +15,8 @@ export default function IndexPage() {
           <NumberInput 
             label='購入数を入力（1口300円）' 
             w={200}
+            min={1}
+            max={3000000}
             value={entry}
             onChange={setEntry} />
             <Button color='gray' onClick={()=>setResult(calc(entry as number))}>回す</Button>

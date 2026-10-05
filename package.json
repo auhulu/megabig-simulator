@@ -1,32 +1,39 @@
 {
-  "name": "mantine-minimal-next-template",
+  "name": "megabig-simulator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "npm run preview",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings 0"
   },
   "dependencies": {
     "@mantine/core": "7.12.2",
     "@mantine/hooks": "7.12.2",
-    "@tanstack/react-query": "^5.53.1",
-    "next": "14.2.4",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.53.0",
-    "@types/node": "20.14.8",
+    "@types/node": "^24.0.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.4",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.2",
+    "wrangler": "^4.147.0",
     "postcss": "^8.4.38",
-    "postcss-preset-mantine": "1.17.0",
+    "postcss-preset-mantine": "1.18.0",
     "postcss-simple-vars": "^7.0.1",
-    "typescript": "5.5.2"
+    "typescript": "~5.9.3"
   },
-  "packageManager": "yarn@4.4.1"
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "type": "module"
 }
